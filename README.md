@@ -9,7 +9,7 @@ To run it using docker:
 ```bash
 docker run --rm -e HCLOUD_TOKEN=[your hetzner token] \
   -e KEEP=3 \
-  omerh/hetzner-hcloud-snapshots
+  omerha/hetzner-hcloud-snapshots
 ```
 
 >KEEP is optional, default is 2
