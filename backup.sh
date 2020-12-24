@@ -16,7 +16,7 @@ function make_snapshot {
 function rotate_snapshots {
   echo "Check if rotate is needed"
   if [[ `hcloud image list --type snapshot --selector id=$1 -o noheader -o columns=id | wc -l | xargs` > $KEEP_SNAPSHOTS ]]; then
-    echo "Deleting last snapshot"
+    echo "Deleting oldest snapshot"
     SNAPSHOTID=$(hcloud image list --type snapshot --selector id=$1 -o noheader -o columns=id | head -1)
     hcloud image delete $SNAPSHOTID
   else 
